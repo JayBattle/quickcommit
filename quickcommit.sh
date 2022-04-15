@@ -14,7 +14,7 @@ sudo git add .
 echo "git status"
 git status
 echo "git commit -m $CommitMessage"
-git commit -m "$CommitMessage"
+sudo git commit -m "$CommitMessage"
 echo "git push"
 git push
 echo "git pull"
