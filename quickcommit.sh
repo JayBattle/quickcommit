@@ -9,6 +9,8 @@ CommitMessage=$1
 #ssh-add ~/.ssh/jmfgitsshkey
 echo "git status"
 git status
+echo "git config --global --add safe.directory ."
+sudo git config --global --add safe.directory .
 echo "git add ."
 sudo git add .
 echo "git status"
