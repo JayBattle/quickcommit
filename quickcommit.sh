@@ -3,7 +3,7 @@
 # Syntax: quickcommit.sh
 # Requires: git
 # Prequisites: authenticate w/ git Ex: (git config --global user.email "EMAIL") (add git ssh key)
-# Note: Do Not use sudo!
+# Note: Do not use sudo!
 CommitMessage=$1
 
 #ssh-add ~/.ssh/jmfgitsshkey
