@@ -10,7 +10,7 @@ CommitMessage=$1
 echo "git status"
 git status
 echo "git config --global --add safe.directory ."
-sudo git config --global --add safe.directory .
+sudo git config --global --add safe.directory $(pwd)
 echo "git add ."
 sudo git add .
 echo "git status"
