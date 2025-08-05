@@ -7,17 +7,24 @@
 CommitMessage=$1
 
 #ssh-add ~/.ssh/jmfgitsshkey
-echo "git status"
-git status
-echo "git config --global --add safe.directory ."
-sudo git config --global --add safe.directory $(pwd)
-echo "git add ."
-sudo git add .
-echo "git status"
-git status
-echo "git commit -m $CommitMessage"
-sudo git commit -m "$CommitMessage"
-echo "git push"
-git push
-echo "git pull"
-git pull
+
+changes=$(git status)
+if [[ "$changes" == *"nothing to commit"* ]]; then
+    echo "No Changes Found."
+else
+    echo "git status"
+    git status
+    echo "git config --global --add safe.directory ."
+    sudo git config --global --add safe.directory $(pwd)
+    echo "git add ."
+    sudo git add .
+    echo "git status"
+    git status
+    echo "git commit -m $CommitMessage"
+    sudo git commit -m "$CommitMessage"
+    echo "git push"
+    git push
+    echo "git pull"
+    git pull
+fi
+
