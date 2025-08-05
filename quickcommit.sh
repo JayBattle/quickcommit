@@ -4,7 +4,7 @@
 # Requires: git
 # Prequisites: authenticate w/ git Ex: (git config --global user.email "EMAIL") (add git ssh key)
 # Note: Do not use sudo!
-CommitMessage=$1
+CommitMessage=$@
 
 #ssh-add ~/.ssh/jmfgitsshkey
 
@@ -12,6 +12,7 @@ changes=$(git status)
 if [[ "$changes" == *"nothing to commit"* ]]; then
     echo "No Changes Found."
 else
+    echo "committing $d"
     echo "git status"
     git status
     echo "git config --global --add safe.directory ."
